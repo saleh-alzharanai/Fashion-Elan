@@ -1,0 +1,22 @@
+{% extends "layouts.master" %}
+
+{% block content %}
+  <div class="homepage-wrapper space-y-16 py-8">
+    {# Dynamically loop through active Twilight components configured in Salla #}
+    {% for component in theme.components %}
+      <section class="theme-component-{{ component.name }}">
+        {% include component.path with component.settings %}
+      </section>
+    {% else %}
+      {# Fallback layout if no components are active in Salla merchant portal #}
+      <div class="container mx-auto px-4 text-center py-20">
+        <h1 class="font-serif text-3xl font-light tracking-wide text-neutral-900 mb-4">
+          É L A N &nbsp; A T E L I E R
+        </h1>
+        <p class="text-neutral-500 font-light max-w-md mx-auto mb-8">
+          Welcome to your new store. Configure your components in the Salla Theme Customizer to display content here.
+        </p>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
