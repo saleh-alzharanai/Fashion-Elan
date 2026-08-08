@@ -1,9 +1,26 @@
 {
-  "theme": {
-    "name": "Élan Atelier",
-    "version": "1.0.0",
-    "author": "Atelier Studio"
-  },
+  "name": "Élan Atelier",
+  "version": "1.0.0",
+  "author": "Atelier Studio",
+  "description": "Commercial-grade fashion theme",
+  "repository_url": "https://github.com/YOUR_USERNAME/elan-atelier",
+  "support_url": "https://example.com/support",
+  "features": [],
   "settings": [],
-  "components": []
+  "components": [
+    {
+      "name": "editorial-hero",
+      "title": "Editorial Hero",
+      "path": "views.components.home.editorial-hero",
+      "icon": "salla-icon-image",
+      "settings": []
+    },
+    {
+      "name": "lookbook-showcase",
+      "title": "Lookbook Showcase",
+      "path": "views.components.home.lookbook",
+      "icon": "salla-icon-grid",
+      "settings": []
+    }
+  ]
 }
