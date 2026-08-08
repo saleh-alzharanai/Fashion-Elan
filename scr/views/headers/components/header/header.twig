@@ -1,0 +1,31 @@
+<header class="sticky top-0 z-50 bg-[var(--color-surface)]/95 backdrop-blur-md border-b border-[var(--color-border)] transition-all duration-300">
+  <div class="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
+    
+    <button class="md:hidden p-2 text-[var(--color-text)] hover:text-[var(--color-accent)] focus:outline-none" aria-label="Toggle Menu">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+
+    <a href="{{ store.url }}" class="flex items-center">
+      {% if store.logo %}
+        <img src="{{ store.logo }}" alt="{{ store.name }}" class="h-8 w-auto object-contain" />
+      {% else %}
+        <span class="text-2xl font-serif font-bold tracking-wider text-[var(--color-text)] uppercase">{{ store.name }}</span>
+      {% endif %}
+    </a>
+
+    <nav class="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
+      {% for item in main_menu %}
+        <a href="{{ item.url }}" class="text-xs uppercase tracking-widest text-[var(--color-text)] hover:text-[var(--color-accent)] transition-colors py-2">
+          {{ item.title }}
+        </a>
+      {% endfor %}
+    </nav>
+
+    <div class="flex items-center space-x-5 rtl:space-x-reverse">
+      <salla-search-input placeholder="{{ trans('theme.header.search_placeholder') }}"></salla-search-input>
+      <salla-user-menu></salla-user-menu>
+      <salla-cart-summary></salla-cart-summary>
+    </div>
+
+  </div>
+</header>
