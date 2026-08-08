@@ -1,20 +1,29 @@
 <!DOCTYPE html>
-<html lang="{{ user.language }}" dir="{{ user.language == 'ar' ? 'rtl' : 'ltr' }}">
+<html lang="{{ session.lang }}" dir="{{ session.dir }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{ head | raw }}
-    <link rel="stylesheet" href="{{ 'css/app.css' | asset }}">
+    <title>{{ store.name }}</title>
+    {# Load Salla Twilight Core Web Components and Styles #}
+    {% hook 'head:start' %}
+    <salla-head></salla-head>
+    {% hook 'head:end' %}
 </head>
-<body class="bg-[var(--color-bg)] text-[var(--color-text)] flex flex-col min-h-screen">
-    {% include 'components/header/header.twig' %}
+<body class="bg-white text-neutral-900 antialiased">
+    {% hook 'body:start' %}
 
-    <main id="main-content" class="flex-grow">
+    {# Header / Navigation Component #}
+    {% include 'components.header.header' ignore missing %}
+
+    {# Main Page Content Injection #}
+    <main id="app">
         {% block content %}{% endblock %}
     </main>
 
-    {% include 'components/footer/footer.twig' %}
+    {# Footer Component #}
+    {% include 'components.footer.footer' ignore missing %}
 
-    {{ footer | raw }}
+    {% hook 'body:end' %}
+    <salla-scripts></salla-scripts>
 </body>
 </html>
