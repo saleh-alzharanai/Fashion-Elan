@@ -1,0 +1,18 @@
+{% if options.sizes %}
+  <div class="size-selector space-y-3 text-start">
+    <div class="flex items-center justify-between text-xs uppercase tracking-wider">
+      <span class="font-semibold text-[var(--color-text)]">{{ trans('theme.product.select_size') }}</span>
+    </div>
+    
+    <div class="flex flex-wrap gap-2">
+      {% for size in options.sizes %}
+        <button type="button" 
+                class="min-w-[44px] h-11 px-3 border border-[var(--color-border)] text-xs font-medium text-[var(--color-text)] transition-all duration-200 hover:border-[var(--color-primary)] focus:border-[var(--color-primary)] disabled:opacity-40 disabled:cursor-not-allowed aria-selected:bg-[var(--color-primary)] aria-selected:text-white"
+                {% if not size.is_available %}disabled{% endif %}
+                aria-selected="{{ size.is_selected ? 'true' : 'false' }}">
+          {{ size.name }}
+        </button>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
