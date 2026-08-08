@@ -1,0 +1,29 @@
+{
+  "theme": {
+    "header": {
+      "search_placeholder": "ابحث عن منتجات، مجموعات...",
+      "cart": "حقيبة التسوق",
+      "account": "الحساب"
+    },
+    "editorial_hero": {
+      "explore_collection": "استكشف المجموعة",
+      "view_campaign": "عرض الحملة"
+    },
+    "product": {
+      "quick_add": "إضافة سريعة",
+      "select_size": "اختر المقاس",
+      "out_of_stock": "نفدت الكمية",
+      "new_arrival": "جديد",
+      "sale_badge": "تخفيض"
+    },
+    "lookbook": {
+      "shop_the_look": "تسوق المظهر",
+      "view_all": "عرض الإطلالات كاملة"
+    },
+    "footer": {
+      "rights_reserved": "جميع الحقوق محفوظة",
+      "newsletter_title": "الانضمام إلى النشرة البريدية",
+      "subscribe": "اشتراك"
+    }
+  }
+}
