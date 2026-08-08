@@ -1,0 +1,51 @@
+<div class="product-card group relative flex flex-col bg-[var(--color-surface)] border border-[var(--color-border)] transition-all duration-300 hover:shadow-md">
+  
+  <div class="relative aspect-[3/4] w-full overflow-hidden bg-[var(--color-surface-alt)]">
+    {% if product.is_on_sale %}
+      <span class="absolute top-3 inset-inline-start-3 z-10 bg-[var(--color-primary)] text-white text-[10px] uppercase tracking-widest px-2.5 py-1">
+        {{ trans('theme.product.sale_badge') }}
+      </span>
+    {% endif %}
+
+    <a href="{{ product.url }}" class="block w-full h-full">
+      <img src="{{ product.image.url }}" 
+           alt="{{ product.image.alt ?: product.name }}" 
+           loading="lazy"
+           class="w-full h-full object-cover object-center transition-opacity duration-500 group-hover:opacity-0" />
+      
+      {% if product.images[1] %}
+        <img src="{{ product.images[1].url }}" 
+             alt="{{ product.name }}" 
+             loading="lazy"
+             class="absolute inset-0 w-full h-full object-cover object-center opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+      {% endif %}
+    </a>
+
+    <div class="absolute top-3 inset-inline-end-3 z-10">
+      <salla-wishlist-button product-id="{{ product.id }}"></salla-wishlist-button>
+    </div>
+  </div>
+
+  <div class="flex flex-col flex-grow p-4 text-start">
+    <h3 class="text-xs uppercase tracking-wider font-medium text-[var(--color-text)] truncate group-hover:text-[var(--color-accent)] transition-colors">
+      <a href="{{ product.url }}">{{ product.name }}</a>
+    </h3>
+
+    <div class="mt-2 flex items-center gap-2 text-xs">
+      {% if product.is_on_sale %}
+        <span class="font-semibold text-[var(--color-text)]">{{ product.sale_price | money }}</span>
+        <span class="text-[10px] text-[var(--color-text-muted)] line-through">{{ product.regular_price | money }}</span>
+      {% else %}
+        <span class="font-semibold text-[var(--color-text)]">{{ product.price | money }}</span>
+      {% endif %}
+    </div>
+
+    <div class="mt-4 pt-3 border-t border-[var(--color-border)]">
+      <salla-add-to-cart-button 
+        product-id="{{ product.id }}" 
+        product-status="{{ product.status }}"
+        product-type="{{ product.type }}">
+      </salla-add-to-cart-button>
+    </div>
+  </div>
+</div>
