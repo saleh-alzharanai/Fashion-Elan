@@ -1,0 +1,70 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600&family=Noto+Serif+Arabic:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-bg: #FAF9F6;
+  --color-surface: #FFFFFF;
+  --color-surface-alt: #F3F1ED;
+  --color-text: #1A1A1A;
+  --color-text-muted: #666666;
+  --color-border: #E5E2DC;
+  --color-primary: #111111;
+  --color-primary-hover: #333333;
+  --color-accent: #8C7355;
+  --color-success: #2E6B41;
+  --color-warning: #B87322;
+  --color-error: #A83232;
+
+  --font-display: "Playfair Display", "Noto Serif Arabic", serif;
+  --font-body: "Plus Jakarta Sans", "Noto Sans Arabic", sans-serif;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+
+  --radius-none: 0px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
+
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-serif {
+  font-family: var(--font-display);
+}
+
+.u-padding-inline {
+  padding-inline-start: var(--space-md);
+  padding-inline-end: var(--space-md);
+}
+
+.u-margin-inline {
+  margin-inline-start: var(--space-md);
+  margin-inline-end: var(--space-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
