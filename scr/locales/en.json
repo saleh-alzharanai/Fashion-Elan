@@ -1,29 +1,4 @@
 {
-  "theme": {
-    "header": {
-      "search_placeholder": "Search products, collections...",
-      "cart": "Shopping Bag",
-      "account": "Account"
-    },
-    "editorial_hero": {
-      "explore_collection": "Explore Collection",
-      "view_campaign": "View Campaign"
-    },
-    "product": {
-      "quick_add": "Quick Add",
-      "select_size": "Select Size",
-      "out_of_stock": "Out of Stock",
-      "new_arrival": "New",
-      "sale_badge": "Sale"
-    },
-    "lookbook": {
-      "shop_the_look": "Shop The Look",
-      "view_all": "View Full Lookbook"
-    },
-    "footer": {
-      "rights_reserved": "All rights reserved",
-      "newsletter_title": "Join Our Newsletter",
-      "subscribe": "Subscribe"
-    }
-  }
+  "search": "Search",
+  "cart": "Cart"
 }
